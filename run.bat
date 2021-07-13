@@ -1,2 +1,2 @@
-cd C:\Users\ADMIN\git\Project_eBanking\eBanking_V1
+C:\Users\ADMIN\Desktop\Automation_Projects\eBanking_V1
 mvn clean install
