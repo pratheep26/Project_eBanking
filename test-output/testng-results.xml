@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="eBanking_V1" duration-ms="11594" started-at="2021-07-13T01:18:08 IST" finished-at="2021-07-13T01:18:19 IST">
+    <groups>
+    </groups>
+    <test name="Banking_Application_Test" duration-ms="11594" started-at="2021-07-13T01:18:08 IST" finished-at="2021-07-13T01:18:19 IST">
+      <class name="com.eBanking.testCases.TC_LoginTest_001">
+        <test-method status="PASS" signature="extentReportSetUp()[pri:0, instance:com.eBanking.testCases.TC_LoginTest_001@481a15ff]" name="extentReportSetUp" is-config="true" duration-ms="347" started-at="2021-07-13T01:18:07 IST" finished-at="2021-07-13T01:18:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- extentReportSetUp -->
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.eBanking.testCases.TC_LoginTest_001@481a15ff]" name="setup" is-config="true" duration-ms="7582" started-at="2021-07-13T01:18:08 IST" finished-at="2021-07-13T01:18:15 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.eBanking.testCases.TC_LoginTest_001@481a15ff]" name="loginTest" duration-ms="2819" started-at="2021-07-13T01:18:15 IST" finished-at="2021-07-13T01:18:18 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:com.eBanking.testCases.TC_LoginTest_001@481a15ff]" name="getResult" is-config="true" duration-ms="4" started-at="2021-07-13T01:18:18 IST" finished-at="2021-07-13T01:18:18 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=TC_LoginTest_001.loginTest()[pri:0, instance:com.eBanking.testCases.TC_LoginTest_001@481a15ff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getResult -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.eBanking.testCases.TC_LoginTest_001@481a15ff]" name="tearDown" is-config="true" duration-ms="1152" started-at="2021-07-13T01:18:18 IST" finished-at="2021-07-13T01:18:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="onFinal()[pri:0, instance:com.eBanking.testCases.TC_LoginTest_001@481a15ff]" name="onFinal" is-config="true" duration-ms="378" started-at="2021-07-13T01:18:19 IST" finished-at="2021-07-13T01:18:20 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onFinal -->
+      </class> <!-- com.eBanking.testCases.TC_LoginTest_001 -->
+    </test> <!-- Banking_Application_Test -->
+  </suite> <!-- eBanking_V1 -->
+</testng-results>
