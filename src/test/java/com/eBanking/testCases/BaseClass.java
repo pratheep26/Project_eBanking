@@ -1,4 +1,4 @@
-package com.eBanking.testCases;
+ package com.eBanking.testCases;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,7 +14,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.io.FileHandler;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -48,8 +48,6 @@ public class BaseClass {
 	@BeforeClass
 	public void setup(String chromeBrowser) 
 	{
-
-
 		//System.setProperty ("webdriver.chrome.driver",System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 		if(chromeBrowser.equalsIgnoreCase("chrome"))
 		{
@@ -107,12 +105,15 @@ public class BaseClass {
 
 	}
 	@AfterMethod
-	public void getResult(ITestResult result)
+	public void getResult(ITestResult result) throws IOException
 	{
 		if(result.getStatus()==ITestResult.FAILURE)
 		{
 			test.fail(MarkupHelper.createLabel(result.getName() + "Test Case Failed", ExtentColor.RED));
 			test.fail(result.getThrowable());
+			
+			String screenshotPath=BaseClass.screenCapture(driver, result.getName());
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
 		else if(result.getStatus()==ITestResult.SUCCESS)
 		{
@@ -130,14 +131,18 @@ public class BaseClass {
 	{
 		report.flush();
 	}
-	public void captureScreen(WebDriver driver, String TC_Name) throws IOException
+	
+	public static String screenCapture(WebDriver driver, String TC_Name) throws IOException
 	{
+		
+		String dateName=new SimpleDateFormat(" yyyy.MM.dd HH.mm.ss").format(new Date());
 		TakesScreenshot screenshot=(TakesScreenshot) driver;
 		File sourceFile=screenshot.getScreenshotAs(OutputType.FILE);
-		File destinationFile=new File(TC_Name +".png");
-		FileHandler.copy(sourceFile, destinationFile);
-		test.addScreenCaptureFromPath(TC_Name +".png");
-		System.out.println("Screenshot Taken");
+		String destination=System.getProperty("user.dir") + "/Screenshots/" + TC_Name + dateName + ".png";
+		File destinationFile=new File(destination);
+		FileUtils.copyFile(sourceFile, destinationFile);
+		return destination;
+
 	}
 
 	public String randomString()
@@ -147,7 +152,7 @@ public class BaseClass {
 	}
 	public static String randomNum()
 	{
-		String generatedString2=RandomStringUtils.randomNumeric(5);
+		String generatedString2=RandomStringUtils.randomNumeric(10);
 		return generatedString2;
 	}
 }

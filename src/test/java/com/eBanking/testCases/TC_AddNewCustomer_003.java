@@ -51,7 +51,6 @@ public class TC_AddNewCustomer_003 extends BaseClass {
 		test.log(Status.INFO, "Entered State");
 		customerPageObjects.cusPincode("614703");
 		test.log(Status.INFO, "Entered Pincode");
-		customerPageObjects.cusTelephone("9952320245");
 		test.log(Status.INFO, "Entered Mobile Number");
 		
 		String email=randomString()+"@gmail.com";
@@ -71,10 +70,10 @@ public class TC_AddNewCustomer_003 extends BaseClass {
 		}
 		else
 		{
-			captureScreen(driver, "addNewCustomer");
+			screenCapture(driver, "addNewCustomer");
 			Assert.assertTrue(true);
 		}
 		test.log(Status.INFO, "End of TC_AddNewCustomer_003");
 	}
-	
+
 }

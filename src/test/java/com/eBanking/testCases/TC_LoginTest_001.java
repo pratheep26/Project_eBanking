@@ -30,19 +30,16 @@ public class TC_LoginTest_001 extends BaseClass
 		
 		test.log(Status.INFO, "Logging into the Homepage");
 		test.log(Status.INFO, "Verifying the Title");
+		
+		String title=driver.getTitle();
+		System.out.println(title);
+		
+		Assert.assertTrue(title.contains("Guru99 Bank Manager HomePage"));
 
-		if(driver.getTitle().equals("Guru99 Bank Manager HomePage")) 
-		{
-			Assert.assertTrue(true);
-			
-		}
-		else
-		{
-			captureScreen(driver, "loginTest");
-			
-			Assert.assertTrue(false);
-	
-		}
+		/*
+		 * if(driver.getTitle().equals("Guru99 Bank Manage HomePage")) {
+		 * Assert.assertTrue(true); } else { Assert.assertTrue(false); }
+		 */
 		
 		test.log(Status.INFO, "End of TC_LoginTest_001");
 

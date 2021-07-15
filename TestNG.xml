@@ -8,9 +8,9 @@
 		<parameter name="browser" value="chrome" />
 
 		<classes>
-			<class name="com.eBanking.testCases.TC_LoginTest_001" />
-			<!-- <class name="com.eBanking.testCases.TC_LoginDDT_002" />
-			<class name="com.eBanking.testCases.TC_AddNewCustomer_003" /> -->
+			<!-- <class name="com.eBanking.testCases.TC_LoginTest_001" />
+			<class name="com.eBanking.testCases.TC_LoginDDT_002" /> -->
+			<class name="com.eBanking.testCases.TC_AddNewCustomer_003" />
 
 
 		</classes>
