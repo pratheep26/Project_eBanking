@@ -4,16 +4,16 @@
   <test thread-count="5" name="Banking_Application_Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.eBanking.testCases.TC_LoginTest_001">
+      <class name="com.eBanking.testCases.TC_LoginTest_MySqlDB_004">
         <methods>
-          <include name="loginTest"/>
           <include name="setup"/>
           <include name="extentReportSetUp"/>
           <include name="tearDown"/>
+          <include name="validateLogin"/>
           <include name="onFinal"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.eBanking.testCases.TC_LoginTest_001 -->
+      </class> <!-- com.eBanking.testCases.TC_LoginTest_MySqlDB_004 -->
     </classes>
   </test> <!-- Banking_Application_Test(failed) -->
 </suite> <!-- Failed suite [eBanking_V1] -->

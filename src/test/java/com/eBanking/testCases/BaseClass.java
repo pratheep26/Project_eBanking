@@ -1,4 +1,4 @@
- package com.eBanking.testCases;
+package com.eBanking.testCases;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -43,11 +45,15 @@ public class BaseClass {
 	public static ExtentSparkReporter htmlReporter;
 	public static ExtentReports report;
 	public static ExtentTest test;
+	
+	static Logger logger;
 
 	@Parameters("browser")
 	@BeforeClass
 	public void setup(String chromeBrowser) 
-	{
+	{	
+		logger=Logger.getLogger(getClass());
+		PropertyConfigurator.configure("Log4j.properties");
 		//System.setProperty ("webdriver.chrome.driver",System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
 		if(chromeBrowser.equalsIgnoreCase("chrome"))
 		{
@@ -111,7 +117,7 @@ public class BaseClass {
 		{
 			test.fail(MarkupHelper.createLabel(result.getName() + "Test Case Failed", ExtentColor.RED));
 			test.fail(result.getThrowable());
-			
+
 			String screenshotPath=BaseClass.screenCapture(driver, result.getName());
 			test.addScreenCaptureFromPath(screenshotPath);
 		}
@@ -131,10 +137,10 @@ public class BaseClass {
 	{
 		report.flush();
 	}
-	
+
 	public static String screenCapture(WebDriver driver, String TC_Name) throws IOException
 	{
-		
+
 		String dateName=new SimpleDateFormat(" yyyy.MM.dd HH.mm.ss").format(new Date());
 		TakesScreenshot screenshot=(TakesScreenshot) driver;
 		File sourceFile=screenshot.getScreenshotAs(OutputType.FILE);

@@ -3,16 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.eBanking.testCases.TC_LoginTest_001">
+      <class name="com.eBanking.testCases.TC_LoginTest_MySqlDB_004">
         <methods>
-          <include name="loginTest"/>
           <include name="setup"/>
           <include name="extentReportSetUp"/>
           <include name="tearDown"/>
+          <include name="validateLogin"/>
           <include name="onFinal"/>
           <include name="getResult"/>
         </methods>
-      </class> <!-- com.eBanking.testCases.TC_LoginTest_001 -->
+      </class> <!-- com.eBanking.testCases.TC_LoginTest_MySqlDB_004 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

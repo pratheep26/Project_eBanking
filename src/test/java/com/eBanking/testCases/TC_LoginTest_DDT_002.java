@@ -12,7 +12,7 @@ import com.eBanking.utilities.ExcelUtils;
 
 
 
-public class TC_LoginDDT_002 extends BaseClass
+public class TC_LoginTest_DDT_002 extends BaseClass
 {
 
 	@Test(dataProvider = "LoginData")
@@ -30,10 +30,9 @@ public class TC_LoginDDT_002 extends BaseClass
 		if(isAlertPresent()==true)
 		{
 			
-			Assert.assertTrue(false);
-			Thread.sleep(2000);
 			driver.switchTo().alert().accept(); //close alert
 			driver.switchTo().defaultContent();// This command will focus on the main page
+			Assert.assertTrue(false);
 		}
 		else
 		{
@@ -41,6 +40,7 @@ public class TC_LoginDDT_002 extends BaseClass
 			pageObjects.clickLogout();
 			Thread.sleep(2000);
 			driver.switchTo().alert().accept();//close logout alert
+			driver.switchTo().defaultContent();
 		}
 	}
 
@@ -61,7 +61,8 @@ public class TC_LoginDDT_002 extends BaseClass
 	@DataProvider(name="LoginData") 
 	String[][] getData() throws IOException 
 	{
-		String path=("C:\\Users\\ADMIN\\git\\Project_eBanking\\eBanking_V1\\src\\test\\java\\com\\eBanking\\testData\\Login_Data.xlsx");
+		String path=
+				("C:\\Users\\ADMIN\\Desktop\\Automation_Projects\\eBanking_V1\\src\\test\\java\\com\\eBanking\\testData\\Login_Data.xlsx");
 
 		int rownum=ExcelUtils.getRowCount(path, "Sheet1");
 		int colnum=ExcelUtils.getCellCount(path, "Sheet1", rownum);
