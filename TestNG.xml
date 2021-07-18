@@ -9,7 +9,7 @@
 
 		<classes>
 			<class name="com.eBanking.testCases.TC_LoginTest_001" />
-			<class name="com.eBanking.testCases.TC_AddNewCustomer_003" />
+			<!-- <class name="com.eBanking.testCases.TC_AddNewCustomer_003" /> -->
 
 			<!-- <class name="com.eBanking.testCases.TC_LoginTest_DDT_002" />
 			<class name="com.eBanking.testCases.TC_LoginTest_MySqlDB_004" /> -->
