@@ -88,7 +88,7 @@ public class BaseClass {
 	{
 		String timeStamp=new SimpleDateFormat("yyyy.MM.dd HH.mm.ss").format(new Date());//Time stamp
 		String repName="Test-Report-"+timeStamp+".html";
-		htmlReporter=new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/Extent_Report/"+repName);//Specify location
+		htmlReporter=new ExtentSparkReporter(System.getProperty("user.dir")+"/test-output/"+repName);//Specify location
 
 		try {
 			htmlReporter.loadXMLConfig(System.getProperty("user.dir")+"/extent-config.xml");
