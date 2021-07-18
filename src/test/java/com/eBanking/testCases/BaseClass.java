@@ -50,7 +50,7 @@ public class BaseClass {
 
 	@Parameters("browser")
 	@BeforeClass
-	public void setup(String chromeBrowser) 
+	public void initiateBrowser(String chromeBrowser) 
 	{	
 		logger=Logger.getLogger(getClass());
 		PropertyConfigurator.configure("Log4j.properties");
@@ -156,7 +156,7 @@ public class BaseClass {
 		String generatedString=RandomStringUtils.randomAlphabetic(8);
 		return generatedString;
 	}
-	public static String randomNum()
+	public static String randomNumber()
 	{
 		String generatedString2=RandomStringUtils.randomNumeric(10);
 		return generatedString2;
